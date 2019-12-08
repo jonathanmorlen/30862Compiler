@@ -2,8 +2,17 @@ import java.io.*;
 
 public class Main
 {
+    public static FileOutputStream outputFile;
     public static void main(String[] args)
     {
+        try
+        {
+            outputFile = new FileOutputStream(new File(args[0].replace(".txt", ".bin")));
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
         // Open file and parse line by line
         try(BufferedReader reader = new BufferedReader(new FileReader(args[0])))
         {
@@ -11,6 +20,7 @@ public class Main
             {
                 parseLine(line);
             }
+            outputFile.write(0);
         }
         catch (Exception e)
         {
