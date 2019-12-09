@@ -4,6 +4,6 @@ public class CmpeOp implements IOperation
 {
     public void generateCode(String[] arguments) throws IOException
     {
-        System.out.println("Generating code for CmpeOp...");
+        Main.outputFile.write((byte) 132);
     }
 }
