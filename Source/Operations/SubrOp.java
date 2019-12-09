@@ -18,9 +18,9 @@ public class SubrOp implements IOperation
         Main.outputFile.write((byte) 70);
         Main.outputFile.write(ByteBuffer.allocate(4).order(ByteOrder.LITTLE_ENDIAN).putInt(17).array());
 
-        // Push zero to start main with zero arguments
+        // Push zero to call function with 1 argument
         Main.outputFile.write((byte) 70);
-        Main.outputFile.write(ByteBuffer.allocate(4).order(ByteOrder.LITTLE_ENDIAN).putInt(0).array());
+        Main.outputFile.write(ByteBuffer.allocate(4).order(ByteOrder.LITTLE_ENDIAN).putInt(1).array());
 
         // Call instruction
         Main.outputFile.write((byte) 44);

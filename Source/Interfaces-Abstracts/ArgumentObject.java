@@ -1,11 +1,22 @@
 public abstract class ArgumentObject
 {
-    byte[] getInteger() {
+    byte[] getInteger()
+    {
         return new byte[0];
     }
 
-    String getString() {
+    String getString()
+    {
         return null;
     }
-    // abstract byte getString();
+
+    String getString1()
+    {
+        return null;
+    }
+
+    String getString2()
+    {
+        return null;
+    }
 }

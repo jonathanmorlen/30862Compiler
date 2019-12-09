@@ -7,17 +7,15 @@ public class OperationFactory
 {
     // All possible operations including an empty line
     private static List<String> keys = List.of(
-            "//", "decl", "lab", "subr", "ret", "printc", "prints", "printi", "printf", "printv",
-            "jmp", "jmpc", "cmpe", "cmplt", "cmpgt", "call", "pushc", "pushs", "pushi", "pushf",
-            "pushv", "popm", "popv", "peek", "poke", "swp", "add", "sub", "mul", "div", ""
+            "//", "decl", "lab", "subr", "ret", "printi", "printv", "jmp", "jmpc", "cmpe", "cmplt", "cmpgt",
+            "call", "pushi", "pushv", "popm", "popv", "peek", "poke", "swp", "add", "sub", "mul", "div", ""
     );
 
     // Names of the class corresponding to the operation
     private static List<String> values = List.of(
-            "DoNothing", "DeclOp", "LabOp", "SubrOp", "RetOp", "PrintcOp", "PrintsOp", "PrintiOp",
-            "PrintfOp", "PrintvOp", "JmpOp", "JmpcOp", "CmpeOp", "CmpltOp", "CmpgtOp", "CallOp",
-            "PushcOp", "PushsOp", "PushiOp", "PushfOp", "PushvOp", "PopmOp", "PopvOp",
-            "PeekOp", "PokeOp", "SwpOp", "AddOp", "SubOp", "MulOp", "DivOp", "DoNothing"
+            "DoNothing", "DeclOp", "LabOp", "SubrOp", "RetOp", "PrintiOp", "PrintvOp", "JmpOp",
+            "JmpcOp", "CmpeOp", "CmpltOp", "CmpgtOp", "CallOp", "PushiOp", "PushvOp", "PopmOp",
+            "PopvOp", "PeekOp", "PokeOp", "SwpOp", "AddOp", "SubOp", "MulOp", "DivOp", "DoNothing"
     );
 
     private static Map<String, IOperation> operations = new HashMap<>();
