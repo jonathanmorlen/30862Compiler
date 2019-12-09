@@ -20,9 +20,6 @@ public class Main
             {
                 parseLine(line);
             }
-
-            // Write halt instruction to stop program
-            outputFile.write(0);
         }
         catch (Exception e)
         {
