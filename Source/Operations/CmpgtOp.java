@@ -4,6 +4,6 @@ public class CmpgtOp implements IOperation
 {
     public void generateCode(String[] arguments) throws IOException
     {
-        Main.outputFile.write((byte) 140);
+        Writer.writeInstruction(140);
     }
 }

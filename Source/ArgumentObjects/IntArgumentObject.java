@@ -9,10 +9,8 @@ public class IntArgumentObject extends ArgumentObject
         integer = i;
     }
 
-    public byte[] getInteger()
+    public int getInteger()
     {
-        ByteBuffer buffer = ByteBuffer.allocate(4);
-        buffer.order(ByteOrder.LITTLE_ENDIAN);
-        return buffer.putInt(integer).array();
+        return integer;
     }
 }

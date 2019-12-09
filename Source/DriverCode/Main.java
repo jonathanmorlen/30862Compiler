@@ -3,6 +3,7 @@ import java.io.*;
 public class Main
 {
     public static FileOutputStream outputFile;
+    public static int programCounter = 0;
     public static void main(String[] args)
     {
         try

@@ -1,8 +1,7 @@
 public abstract class ArgumentObject
 {
-    byte[] getInteger()
-    {
-        return new byte[0];
+    int getInteger() {
+        return 0;
     }
 
     String getString()

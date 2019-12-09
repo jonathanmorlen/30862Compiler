@@ -9,12 +9,7 @@ public class PopvOp implements IOperation
     {
         ArgumentObject argumentObject = parser.parse(arguments);
         int location = SymbolTable.getValueAt(argumentObject.getString());
-
-        // Push location of variable to get (pushi)
-        Main.outputFile.write((byte) 70);
-        Main.outputFile.write(ByteBuffer.allocate(4).order(ByteOrder.LITTLE_ENDIAN).putInt(location).array());
-
-        // Popv instruction
-        Main.outputFile.write((byte) 80);
+        Writer.pushi(location);
+        Writer.writeInstruction(80);
     }
 }

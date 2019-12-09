@@ -9,15 +9,8 @@ public class PrintvOp implements IOperation
     {
         ArgumentObject argumentObject = parser.parse(arguments);
         int location = SymbolTable.getValueAt(argumentObject.getString());
-
-        // Push variable location onto stack (pushi)
-        Main.outputFile.write((byte) 70);
-        Main.outputFile.write(ByteBuffer.allocate(4).order(ByteOrder.LITTLE_ENDIAN).putInt(location).array());
-
-        // Push value of variable onto stack (pushv)
-        Main.outputFile.write((byte) 74);
-
-        // Print variable value from top of stack (printi)
-        Main.outputFile.write((byte) 146);
+        Writer.pushi(location);
+        Writer.writeInstruction(74);
+        Writer.writeInstruction(146);
     }
 }

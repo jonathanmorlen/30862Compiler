@@ -6,12 +6,7 @@ public class PrintiOp implements IOperation
 
     public void generateCode(String[] arguments) throws IOException {
         ArgumentObject argumentObject = parser.parse(arguments);
-
-        // Pushi instruction
-        Main.outputFile.write((byte) 70);
-        Main.outputFile.write(argumentObject.getInteger());
-
-        // Print integer instruction
-        Main.outputFile.write((byte) 146);
+        Writer.pushi(argumentObject.getInteger());
+        Writer.writeInstruction(146);
     }
 }

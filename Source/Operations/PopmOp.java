@@ -8,10 +8,7 @@ public class PopmOp implements IOperation
 
     public void generateCode(String[] arguments) throws IOException {
         ArgumentObject argumentObject = parser.parse(arguments);
-
-        // Push number of entries to pop on stack (pushi)
-        Main.outputFile.write((byte) 70);
-        Main.outputFile.write(argumentObject.getInteger());
-        Main.outputFile.write((byte) 76);
+        Writer.pushi(argumentObject.getInteger());
+        Writer.writeInstruction(76);
     }
 }

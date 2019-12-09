@@ -10,10 +10,9 @@ public class IntStringArgumentObject extends ArgumentObject
         string = s;
     }
 
-    public byte[] getInteger()
+    public int getInteger()
     {
-        ByteBuffer buffer = ByteBuffer.allocate(4);
-        return buffer.putInt(integer).array();
+        return integer;
     }
 
     public String getString()

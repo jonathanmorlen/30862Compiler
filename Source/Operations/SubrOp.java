@@ -9,22 +9,11 @@ public class SubrOp implements IOperation
     {
         ArgumentObject argumentObject = parser.parse(arguments);
 
-        // Push return address
-        Main.outputFile.write((byte) 70);
-        Main.outputFile.write(ByteBuffer.allocate(4).order(ByteOrder.LITTLE_ENDIAN).putInt(16).array());
-
-        // Push main address
-        Main.outputFile.write((byte) 70);
-        Main.outputFile.write(ByteBuffer.allocate(4).order(ByteOrder.LITTLE_ENDIAN).putInt(17).array());
-
-        // Push zero to call function with 1 argument
-        Main.outputFile.write((byte) 70);
-        Main.outputFile.write(ByteBuffer.allocate(4).order(ByteOrder.LITTLE_ENDIAN).putInt(1).array());
-
-        // Call instruction
-        Main.outputFile.write((byte) 44);
-
-        // Return address
-        Main.outputFile.write((byte) 0);
+        // Set up main function and return address
+        Writer.pushi(16);
+        Writer.pushi(17);
+        Writer.pushi(1);
+        Writer.writeInstruction(44);
+        Writer.writeInstruction(0);
     }
 }

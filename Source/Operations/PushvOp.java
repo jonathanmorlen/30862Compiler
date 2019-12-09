@@ -8,15 +8,9 @@ public class PushvOp implements IOperation
 
     public void generateCode(String[] arguments) throws IOException {
         ArgumentObject argumentObject = parser.parse(arguments);
-        String variableName = argumentObject.getString();
-        int location = SymbolTable.getValueAt(variableName);
-
-        // Push location of variable on stack (pushi)
-        Main.outputFile.write((byte) 70);
-        Main.outputFile.write(ByteBuffer.allocate(4).order(ByteOrder.LITTLE_ENDIAN).putInt(location).array());
-
-        // Pushv instruction
-        Main.outputFile.write((byte) 74);
+        int location = SymbolTable.getValueAt(argumentObject.getString());
+        Writer.pushi(location);
+        Writer.writeInstruction(74);
     }
 }
 

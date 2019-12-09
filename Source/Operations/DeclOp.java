@@ -10,9 +10,6 @@ public class DeclOp implements IOperation
     {
         ArgumentObject argumentObject = parser.parse(arguments);
         SymbolTable.addValue(argumentObject.getString1(), variableCount++);
-
-        // Allocate space on stack for variable
-        Main.outputFile.write((byte) 70);
-        Main.outputFile.write(ByteBuffer.allocate(4).order(ByteOrder.LITTLE_ENDIAN).putInt(0).array());
+        Writer.pushi(0);
     }
 }

@@ -4,6 +4,6 @@ public class SubOp implements IOperation
 {
     public void generateCode(String[] arguments) throws IOException
     {
-        Main.outputFile.write((byte) 104);
+        Writer.writeInstruction(104);
     }
 }
