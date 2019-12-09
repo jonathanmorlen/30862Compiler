@@ -7,7 +7,6 @@ public class PopvOp implements IOperation
     private IParser parser = new StringParser();
     public void generateCode(String[] arguments) throws IOException
     {
-        System.out.println("Generating code for PopvOp...");
         ArgumentObject argumentObject = parser.parse(arguments);
         int location = SymbolTable.getValueAt(argumentObject.getString());
 

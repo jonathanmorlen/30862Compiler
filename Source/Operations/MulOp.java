@@ -4,6 +4,6 @@ public class MulOp implements IOperation
 {
     public void generateCode(String[] arguments) throws IOException
     {
-        System.out.println("Generating code for MulOp...");
+        Main.outputFile.write((byte) 108);
     }
 }

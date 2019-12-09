@@ -4,6 +4,6 @@ public class SwpOp implements IOperation
 {
     public void generateCode(String[] arguments) throws IOException
     {
-        System.out.println("Generating code for SwpOp...");
+        Main.outputFile.write((byte) 94);
     }
 }

@@ -4,6 +4,6 @@ public class AddOp implements IOperation
 {
     public void generateCode(String[] arguments) throws IOException
     {
-        System.out.println("Generating code for AddOp...");
+        Main.outputFile.write((byte) 100);
     }
 }
