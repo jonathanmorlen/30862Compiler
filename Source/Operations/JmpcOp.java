@@ -8,9 +8,17 @@ public class JmpcOp implements IOperation
 
     public void generateCode(String[] arguments) throws IOException
     {
-        ArgumentObject argumentObject = parser.parse(arguments);
-        int location = SymbolTable.getValueAt(argumentObject.getString());
-        Writer.pushi(location);
-        Writer.writeInstruction(40);
+        if(!Main.firstRun)
+        {
+            ArgumentObject argumentObject = parser.parse(arguments);
+            int location = SymbolTable.getValueAt(argumentObject.getString());
+            Writer.pushi(location);
+            Writer.writeInstruction(40);
+        }
+        else
+        {
+            Writer.pushi(0);
+            Writer.writeInstruction(40);
+        }
     }
 }

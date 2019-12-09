@@ -3,7 +3,9 @@ import java.io.*;
 public class Main
 {
     public static FileOutputStream outputFile;
+    public static int variableCount = 0;
     public static int programCounter = 0;
+    public static boolean firstRun;
     public static void main(String[] args)
     {
         try
@@ -15,8 +17,21 @@ public class Main
             e.printStackTrace();
         }
         // Open file and parse line by line
-        try(BufferedReader reader = new BufferedReader(new FileReader(args[0])))
+        try
         {
+            // First run to get all label locations
+            firstRun = true;
+            BufferedReader reader = new BufferedReader(new FileReader(args[0]));
+            for(String line; (line = reader.readLine()) != null;)
+            {
+                parseLine(line);
+            }
+
+            // Second run to actually compile the file
+            programCounter = 0;
+            variableCount = 0;
+            firstRun = false;
+            reader = new BufferedReader(new FileReader(args[0]));
             for(String line; (line = reader.readLine()) != null;)
             {
                 parseLine(line);

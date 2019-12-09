@@ -1,4 +1,4 @@
-//The goal of this program is to test jmp, jmpc, and label
+// The goal of this program is to test jmp, jmpc, and label
 subr 0 main
 decl one int
 decl zero int
