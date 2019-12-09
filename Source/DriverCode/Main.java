@@ -20,6 +20,8 @@ public class Main
             {
                 parseLine(line);
             }
+
+            // Write halt instruction to stop program
             outputFile.write(0);
         }
         catch (Exception e)
@@ -34,6 +36,7 @@ public class Main
         String[] tokens = line.trim().split(" ");
         if(OperationFactory.getAllOperations().contains(tokens[0]))
         {
+            // Get appropriate operation object and write its code to the output binary
             IOperation operation = OperationFactory.getOperation(tokens[0]);
             operation.generateCode(tokens);
         }
