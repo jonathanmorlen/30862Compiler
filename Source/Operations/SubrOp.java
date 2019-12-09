@@ -8,7 +8,6 @@ public class SubrOp implements IOperation
     public void generateCode(String[] arguments) throws IOException
     {
         ArgumentObject argumentObject = parser.parse(arguments);
-        SymbolTable.addValue(argumentObject.getString(), ByteBuffer.wrap(argumentObject.getInteger()).getInt());
 
         // Push return address
         Main.outputFile.write((byte) 70);
