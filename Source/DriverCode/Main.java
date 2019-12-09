@@ -6,6 +6,7 @@ public class Main
     public static int variableCount = 0;
     public static int programCounter = 0;
     public static boolean firstRun;
+
     public static void main(String[] args)
     {
         try
